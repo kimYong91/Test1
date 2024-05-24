@@ -23,7 +23,11 @@ class ToDoViewAdapter(val toDoList: MutableList<ToDo>) : RecyclerView.Adapter<To
             binding.linearView.setOnClickListener {
                 val intent = Intent(toDoBind, DetailActivity::class.java)
                 toDoBind.startActivity(intent)
+
+                intent.putExtra("Key", binding.toDoText.text.toString())
+                toDoBind.startActivity(intent)
             }
+
         }
     }
 
